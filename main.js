@@ -14,6 +14,11 @@ var gotfile=getfile("api-data/resumedata.json");
 gotfile.then(function(dat){
   console.log(dat);
   career(dat.career);
+  Education(dat.education);
+  skills(dat.skills);
+  lang();
+  conclusion(dat.conclusion);
+
 })
 
 var right=document.querySelector(".content");
@@ -28,19 +33,79 @@ function career(car){
   p.textContent=car.data;
   right.appendChild(p);
 }
-// function loadJSON(url, callback) {
-//   var xhr = new XMLHttpRequest();
-//   xhr.overrideMimeType("application/json");
-//   xhr.open("GET", url, true);
-//   xhr.onreadystatechange = function() {
-//     if (xhr.readyState === 4 && xhr.status == "200") {
-//       callback(xhr.responseText);
-//     }
-//   };
-//   xhr.send();
-// }
+function conclusion(con){
+  var h2=document.createElement("h2");
+  h2.textContent = "conclusion :";
+  right.appendChild(h2);
+  var p = document.createElement("p");
+  p.textContent = con.data;
+  right.appendChild(p);
+}
 
-// loadJSON("api-data/resumedata.json", function(text) {
-//   let data = JSON.parse(text);
-//   console.log(data);
-// });
+function skills(skills){
+  var table = document.createElement("table");
+  var tr = document.createElement("tr");
+  var td = document.createElement("td");
+  td.textContent = "Web Development";
+  tr.appendChild(td);
+  var td = document.createElement("td");
+  td.textContent = skills.webdevelopment;
+  tr.appendChild(td);
+  table.appendChild(tr);
+  var tr = document.createElement("tr");
+  var td = document.createElement("td");
+  td.textContent = "Technologies";
+  tr.appendChild(td);
+  var td = document.createElement("td");
+  td.textContent = skills.technologies;
+  tr.appendChild(td);
+  table.appendChild(tr);
+  var tr = document.createElement("tr");
+  var td = document.createElement("td");
+  td.textContent = "Operating System";
+  tr.appendChild(td);
+  var td = document.createElement("td");
+  td.textContent = skills.os;
+  tr.appendChild(td);
+  table.appendChild(tr);
+  var tr = document.createElement("tr");
+  var td = document.createElement("td");
+  td.textContent = "Databases";
+  tr.appendChild(td);
+  var td = document.createElement("td");
+  td.textContent = skills.db;
+  tr.appendChild(td);
+  table.appendChild(tr);
+  var h2 = document.createElement("h2");
+  h2.textContent = "Technical Skills";
+  right.appendChild(h2);
+  right.appendChild(table);
+}
+function Education(edu){
+  var h2 = document.createElement("h2");
+  h2.textContent = "Education";
+  right.appendChild(h2);
+  console.log("function");
+  var ul = document.createElement("ul");
+  right.appendChild(ul);
+  console.log(edu.length);
+  for(i=0;i<edu.length;i++){
+    var li = document.createElement("li");
+    li.textContent = edu[i].degree;
+    ul.appendChild(li);
+  }
+  console.log("function");
+}
+function lang(){
+  var h2 = document.createElement("h2");
+  h2.textContent = "Languages";
+  right.appendChild(h2);
+  var ul = document.createElement("ul");
+  right.appendChild(ul);
+  var  li1= document.createElement("li");
+  li1.textContent="Telugu";
+  ul.appendChild(li1);
+  var  li2= document.createElement("li");
+  li2.textContent="English";
+  ul.appendChild(li2);
+}

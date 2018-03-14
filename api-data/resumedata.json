@@ -7,6 +7,26 @@
 
   "career":{
     "data":"To pursue a challenging career and be a part of progressive organization that gives a scope to enhance my knowledge and utilizing my skills towards the growth of the organization"
+  },
+  "conclusion":{
+    "data":"I hereby declare that all the particulars stated above are true to the best of my knowledge and belief."
+  },
+  "education": [
+    {
+      "degree":"SSC-rayalaseema wisdom academy,passed out in 2013 \n grade-9"
+    },
+    {
+     "degree":"Inter-sss jr college ,passed out in 2015 \n grade-94.3"
+    },
+    {
+      "degree":"Btech-SVCET , passed out in 2019 \n grade-80"
+    }
+  ],
+  "skills":{
+    "webdevelopment":"Html,css,Javascript,Django-web framework",
+    "technologies":"java, python",
+    "os":"windows 10,ubuntu",
+    "db":"Mysql, oracle"
   }
 }
 
